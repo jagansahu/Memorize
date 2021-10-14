@@ -7,7 +7,8 @@
 
 import Foundation
 
-//user will have to put in cardcontent, since Card type uses it
+//Model
+//have to put in cardcontent, since Card type uses it
 struct MemoryGame<CardContent> {
     
     private(set) var cards: Array<Card>
@@ -16,9 +17,9 @@ struct MemoryGame<CardContent> {
         
     }
     
+    //initializes cards arr with # of pairs provided in viewmodel
     init(numberOfPairOfCards: Int, createCardContent:(Int) -> CardContent) {
         cards = Array<Card>()
-        
         for index in 0..<numberOfPairOfCards {
             let content = createCardContent(index)
             //add 2 of the same cards into cards arr
@@ -28,6 +29,7 @@ struct MemoryGame<CardContent> {
          
     }
 
+    //Card type defintion
     struct Card {
         var isFaceUp: Bool = false
         var isMatched: Bool = false
