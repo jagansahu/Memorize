@@ -13,7 +13,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     private(set) var cards: Array<Card>
     
-    private var indexOfOnlyCardFaceUp: Int?
+    private var indexOfOnlyCardFaceUp: Int? //initialized as nil !
     
     mutating func choose(_ card: Card) {
         //commas are AND in async order when if-statement is being executed
